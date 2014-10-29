@@ -32,7 +32,23 @@
        <result name="none">/Webpages/nonet.jsp</result>
        <result name="error">/error.jsp</result>
      </action>
-     
+         
+      <action name="Tlogin" class="action.Tlogin">
+            <result>/Webpages/tch.jsp</result>
+            <result name="none">/Webpages/none.jsp</result>
+            <result name="error">/error.jsp</result>
+        </action>
+        
+         <action name="Startapt" class="action.Startapt">
+            <result>/Webpages/startsuc.jsp</result>
+            <result name="error">/error.jsp</result>
+        </action>
+         
+         <action name="Makeapt" class="action.Makeapt">
+            <result>/Webpages/mkaptsuc.jsp</result>
+            <result name="error">/error.jsp</result>
+        </action>
+        
     </package>
 
 
