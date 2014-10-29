@@ -58,7 +58,7 @@ public class Tlogin   extends ActionSupport {
 				    	  Class.forName("com.mysql.jdbc.Driver").newInstance();
 				    	  conn =DriverManager.getConnection(URL,Username,Password);
 		
-			         String sql = "SELECT name£¬formid FROM tch_list WHERE";
+			         String sql = "SELECT name,formid FROM tch_list WHERE";
 			         sql+=" id = ? AND password = ?";
 			         PreparedStatement ps = conn.prepareStatement(sql);
 			         ps.setString(1, teacherid);
