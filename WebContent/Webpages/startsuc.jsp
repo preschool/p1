@@ -8,5 +8,13 @@
 </head>
 <body>
 <h1 align="center">预约发布成功</h1>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<center><a href="searchtech.jsp">继续</a></center>
 </body>
 </html>

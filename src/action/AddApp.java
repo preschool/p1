@@ -13,33 +13,41 @@ import javax.servlet.http.HttpServletRequest;
 import org.apache.struts2.ServletActionContext;
 
 import com.opensymphony.xwork2.ActionSupport;
-public class Slogin  extends ActionSupport {
-	   private String studentid;
-	   private String passwd;
-	   private String sname;
+public class AddApp   extends ActionSupport {
+	   private String starttime;
+	   private String endtime;
+	   private String address;
+	   private String message;
        
-	   public String getSname(){
-		   return this.sname;
+	   public String getStarttime(){
+		   return this.starttime;
 	   }
-	   public void setSname(String sname){
-		   this.sname=sname;
+	   public void setStarttime(String name){
+		   this.starttime=name;
 	   }
-	   public String getStudentid() {
-	      return studentid;
-	   }
-
-	   public void setStudentid(String sid) {
-	      this.studentid = sid;
+	   public String getEndtime() {
+	      return endtime;
 	   }
 
-	   public String getPasswd() {
-		      return passwd;
+	   public void setEndtime(String sid) {
+	      this.endtime = sid;
+	   }
+
+	   public String getAddress() {
+		      return address;
 		   }
 
-		   public void setPasswd(String pd) {
-		      this.passwd = pd;
+		   public void setAddress(String pd) {
+		      this.address = pd;
 		   }
 		   
+		   public String getMessage() {
+			      return message;
+			   }
+
+			   public void setMessage(String pd) {
+			      this.message = pd;
+			   }
 		   public String execute() {
 			      String ret = "none";
 		   Connection conn = null;
@@ -52,23 +60,20 @@ public class Slogin  extends ActionSupport {
 				    	  Class.forName("com.mysql.jdbc.Driver").newInstance();
 				    	  conn =DriverManager.getConnection(URL,Username,Password);
 		
-			         String sql = "SELECT name FROM stu_list WHERE";
-			         sql+=" id = ? AND password = ?";
+			         String sql = "insert into app_list values('?','?','?','?')";
+			         String time= starttime+"---"+endtime;
 			         PreparedStatement ps = conn.prepareStatement(sql);
-			         ps.setString(1, studentid);
-			         ps.setString(2, passwd);
-			         System.out.println(studentid);
-			         System.out.println(passwd);
-			         ResultSet rs = ps.executeQuery();
-			         if (rs.next()) {
-			        	 
-				          sname = rs.getString(1);
-				         
-				          System.out.println(sname);
-				            ret = SUCCESS;
+			         //ps.setString(1, teacherid);
+			         //ps.setString(2, passwd);
+			         ps.setString(3, time);
+			         ps.setString(4, address);
+			         ps.setString(5, message);
+			         //System.out.println(teacherid);
+			         //System.out.println(passwd);
+			        ps.execute();
+	
 				            //HttpServletRequest request = ServletActionContext.getRequest();  
 				            //request.getSession().setAttribute("sname",sname);
-				         }
 			         if (conn != null) {
 				            try {
 				               conn.close();
@@ -77,14 +82,11 @@ public class Slogin  extends ActionSupport {
 			                    return ERROR;
 				            }
 			         }
-			         
-			         
 			      }catch (Exception e) {
 			    	   e.printStackTrace();  
 	                    return ERROR;
 				      }
 			      
 			      return ret;
-
 }
 }

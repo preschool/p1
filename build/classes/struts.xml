@@ -26,6 +26,10 @@
             <result name="none">/Webpages/none.jsp</result>
             <result name="error">/error.jsp</result>
         </action>
+        
+       <action name="AddApp" class="action.AddApp">
+        <result>/Webpages/startsuc.jsp</result>
+       </action>
        
      <action name="Search"  class="action.Search">
      <result>/Webpages/searchtech.jsp</result>
