@@ -18,7 +18,7 @@
 <br/>
 
 <br/>
-<a href="start_apt.jsp"><img src="../pictures/disch.gif" width="207" height="68" border="0"></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="tsee.jsp"><img src="../pictures/query.gif" width="213" height="68" border="0"></a><br/>
+<a href="startapp.html"><img src="../pictures/disch.gif" width="207" height="68" border="0"></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="showapp.jsp"><img src="../pictures/query.gif" width="213" height="68" border="0"></a><br/>
 <br/><br/>
 <br/><br/>
 <br/><br/>

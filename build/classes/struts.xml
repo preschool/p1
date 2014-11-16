@@ -33,6 +33,11 @@
        <result name="error">/error.jsp</result>
      </action>
          
+      <action name="AddApp"  class="action.AddApp">
+      <result>/Webpages/startsuc.jsp</result>
+       <result name="error">/error.jsp</result>
+     </action>
+         
       <action name="Tlogin" class="action.Tlogin">
             <result>/Webpages/tch.jsp</result>
             <result name="none">/Webpages/none.jsp</result>
