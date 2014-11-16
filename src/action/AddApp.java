@@ -18,6 +18,7 @@ public class AddApp   extends ActionSupport {
 	   private String endtime;
 	   private String address;
 	   private String message;
+<<<<<<< HEAD
 	   private String day;
 	   
 	   public String getDay(){
@@ -26,6 +27,9 @@ public class AddApp   extends ActionSupport {
 	   public void setDay(String name){
 		   this.day=name;
 	   }
+=======
+       
+>>>>>>> 3739629f02a16ae931f9384a2b10a337a339a6cb
 	   public String getStarttime(){
 		   return this.starttime;
 	   }
@@ -55,15 +59,21 @@ public class AddApp   extends ActionSupport {
 			   public void setMessage(String pd) {
 			      this.message = pd;
 			   }
+<<<<<<< HEAD
 			   
 			   
 		   public String execute() {
+=======
+		   public String execute() {
+			      String ret = "none";
+>>>>>>> 3739629f02a16ae931f9384a2b10a337a339a6cb
 		   Connection conn = null;
 			      try {
 			    	  String URL="jdbc:mysql://localhost:3306/app";
 				    	// 使用从库读数据
 				    	  // 通过SaeUserInfo提供的静态方法获取应用的access_key和secret_key
 			    	  String Username="root";
+<<<<<<< HEAD
 			    	  String Password="0451";
 				    	  Class.forName("com.mysql.jdbc.Driver").newInstance();
 				    	  conn =DriverManager.getConnection(URL,Username,Password);
@@ -89,6 +99,24 @@ public class AddApp   extends ActionSupport {
 				       
 				            ret = SUCCESS;
 				         }
+=======
+			    	  String Password="";
+				    	  Class.forName("com.mysql.jdbc.Driver").newInstance();
+				    	  conn =DriverManager.getConnection(URL,Username,Password);
+		
+			         String sql = "insert into app_list values('?','?','?','?')";
+			         String time= starttime+"---"+endtime;
+			         PreparedStatement ps = conn.prepareStatement(sql);
+			         //ps.setString(1, teacherid);
+			         //ps.setString(2, passwd);
+			         ps.setString(3, time);
+			         ps.setString(4, address);
+			         ps.setString(5, message);
+			         //System.out.println(teacherid);
+			         //System.out.println(passwd);
+			        ps.execute();
+	
+>>>>>>> 3739629f02a16ae931f9384a2b10a337a339a6cb
 				            //HttpServletRequest request = ServletActionContext.getRequest();  
 				            //request.getSession().setAttribute("sname",sname);
 			         if (conn != null) {
