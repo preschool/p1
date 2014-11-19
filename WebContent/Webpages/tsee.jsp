@@ -12,7 +12,7 @@ String URL="jdbc:mysql://localhost:3306/app";
 // 使用从库读数据
   // 通过SaeUserInfo提供的静态方法获取应用的access_key和secret_key
 String Username="root";
-String Password="0451";
+String Password="";
 int stunum,week=100;
 int rows = 9;  
 int cols = 7; 

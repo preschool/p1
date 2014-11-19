@@ -39,7 +39,7 @@ public class Startapt   extends ActionSupport {
 				    	// 使用从库读数据
 				    	  // 通过SaeUserInfo提供的静态方法获取应用的access_key和secret_key
 			    	  String Username="root";
-			    	  String Password="0451";
+			    	  String Password="";
 				    	  Class.forName("com.mysql.jdbc.Driver").newInstance();
 				    	  conn =DriverManager.getConnection(URL,Username,Password);
 				    	  System.out.println(aptmsg);
