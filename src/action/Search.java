@@ -43,7 +43,15 @@ public class Search  extends ActionSupport {
 				    	// 使用从库读数据
 				    	  // 通过SaeUserInfo提供的静态方法获取应用的access_key和secret_key
 			    	  String Username="root";
+<<<<<<< HEAD
 			    	  String Password="";
+=======
+<<<<<<< HEAD
+			    	  String Password="";
+=======
+			    	  String Password="0451";
+>>>>>>> 339fc110a57650931d8c0f93148857cb8f705c37
+>>>>>>> 9fa8330758d7e721824ee195bdd021d78e20aee7
 				    	  Class.forName("com.mysql.jdbc.Driver").newInstance();
 				    	  conn =DriverManager.getConnection(URL,Username,Password);
 		

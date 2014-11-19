@@ -25,11 +25,20 @@
 			<arguments>
 			</arguments>
 		</buildCommand>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 9fa8330758d7e721824ee195bdd021d78e20aee7
 		<buildCommand>
 			<name>com.genuitec.eclipse.ast.deploy.core.DeploymentBuilder</name>
 			<arguments>
 			</arguments>
 		</buildCommand>
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 339fc110a57650931d8c0f93148857cb8f705c37
+>>>>>>> 9fa8330758d7e721824ee195bdd021d78e20aee7
 	</buildSpec>
 	<natures>
 		<nature>org.eclipse.jem.workbench.JavaEMFNature</nature>

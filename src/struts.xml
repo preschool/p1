@@ -26,10 +26,22 @@
             <result name="none">/Webpages/none.jsp</result>
             <result name="error">/error.jsp</result>
         </action>
+<<<<<<< HEAD
+        
+       <action name="AddApp" class="action.AddApp">
+        <result>/Webpages/startsuc.jsp</result>
+       </action>
+=======
+>>>>>>> 339fc110a57650931d8c0f93148857cb8f705c37
        
      <action name="Search"  class="action.Search">
      <result>/Webpages/searchtech.jsp</result>
        <result name="none">/Webpages/nonet.jsp</result>
+       <result name="error">/error.jsp</result>
+     </action>
+         
+      <action name="AddApp"  class="action.AddApp">
+      <result>/Webpages/startsuc.jsp</result>
        <result name="error">/error.jsp</result>
      </action>
          

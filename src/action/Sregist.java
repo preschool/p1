@@ -1,5 +1,4 @@
 package action;
-
 import java.sql.Connection;  
 import java.sql.DriverManager;  
 import java.sql.SQLException;  
@@ -13,11 +12,11 @@ import javax.servlet.http.HttpServletRequest;
 import org.apache.struts2.ServletActionContext;
 
 import com.opensymphony.xwork2.ActionSupport;
-public class Slogin  extends ActionSupport {
-	   private String studentid;
+public class Sregist extends ActionSupport{
+	 private String studentid;
 	   private String passwd;
 	   private String sname;
-       
+     
 	   public String getSname(){
 		   return this.sname;
 	   }
@@ -41,42 +40,35 @@ public class Slogin  extends ActionSupport {
 		   }
 		   
 		   public String execute() {
-			      String ret = "none";
+			      String ret = "error";
 		   Connection conn = null;
 			      try {
 			    	  String URL="jdbc:mysql://localhost:3306/app";
 				    	// 使用从库读数据
 				    	  // 通过SaeUserInfo提供的静态方法获取应用的access_key和secret_key
 			    	  String Username="root";
-<<<<<<< HEAD
-			    	  String Password="";
-=======
-<<<<<<< HEAD
-			    	  String Password="";
-=======
 			    	  String Password="0451";
->>>>>>> 339fc110a57650931d8c0f93148857cb8f705c37
->>>>>>> 9fa8330758d7e721824ee195bdd021d78e20aee7
 				    	  Class.forName("com.mysql.jdbc.Driver").newInstance();
 				    	  conn =DriverManager.getConnection(URL,Username,Password);
 		
-			         String sql = "SELECT name FROM stu_list WHERE";
-			         sql+=" id = ? AND password = ?";
+			         String sql = "SELECT FROM tch_list WHERE id=?";
 			         PreparedStatement ps = conn.prepareStatement(sql);
 			         ps.setString(1, studentid);
-			         ps.setString(2, passwd);
-			         System.out.println(studentid);
-			         System.out.println(passwd);
 			         ResultSet rs = ps.executeQuery();
 			         if (rs.next()) {
-			        	 
-				          sname = rs.getString(1);
-				         
-				          System.out.println(sname);
+			        	 String sql2 = "insert into tch_list(id,name,password) values('?','?','?')";
+			        	 PreparedStatement ps2 = conn.prepareStatement(sql2);
+			        	 ps.setString(1, studentid);
+			        	 ps.setString(2, sname);
+			        	 ps.setString(3, passwd);
+				         ps.execute();
 				            ret = SUCCESS;
 				            //HttpServletRequest request = ServletActionContext.getRequest();  
 				            //request.getSession().setAttribute("sname",sname);
 				         }
+			         else{
+			        	 ret = "exist";
+			         }
 			         if (conn != null) {
 				            try {
 				               conn.close();
