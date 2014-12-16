@@ -1,0 +1,79 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<meta charset="UTF-8">
+
+
+<center>
+	<form name="form1" action="AddApp" method="post">
+		<h1>发布预约</h1>
+		<br /> <br /> <br /> <br /> <select name="week">
+			<option value="xq" selected="selected">本周</option>
+			<option value="nxq">下周</option>
+		</select> <select name="day">
+			<option value="xq1" selected="selected">星期一</option>
+			<option value="xq2">星期二</option>
+			<option value="xq3">星期三</option>
+			<option value="xq4">星期四</option>
+			<option value="xq5">星期五</option>
+			<option value="xq6">星期六</option>
+			<option value="xq7">星期日</option>
+		</select>
+		<p>
+			开始时间: <input type="text" name="starttime" />
+		</p>
+		<p>
+			结束时间: <input type="text" name="endtime" />
+		</p>
+		<p>
+			预约地址: <input type="text" name="address">
+		</p>
+		<p>
+			<textarea name="message" cols="25" rows="10">预留信息：</textarea>
+		</p>
+		<input type="reset" name="Submit2" value="重写" /> &nbsp;&nbsp;&nbsp; <input
+			type="submit" name="post" value="发布" />
+
+	</form>
+</center>
+<div align="right">
+  <span id=localtime></span>
+<script type="text/javascript">
+function showLocale(objD)
+{
+	var str,colorhead,colorfoot;
+	var yy = objD.getYear();
+	if(yy<1900) yy = yy+1900;
+	var MM = objD.getMonth()+1;
+	if(MM<10) MM = '0' + MM;
+	var dd = objD.getDate();
+	if(dd<10) dd = '0' + dd;
+	var hh = objD.getHours();
+	if(hh<10) hh = '0' + hh;
+	var mm = objD.getMinutes();
+	if(mm<10) mm = '0' + mm;
+	var ss = objD.getSeconds();
+	if(ss<10) ss = '0' + ss;
+	var ww = objD.getDay();
+	if  (ww==0)  ww="星期日";
+	if  (ww==1)  ww="星期一";
+	if  (ww==2)  ww="星期二";
+	if  (ww==3)  ww="星期三";
+	if  (ww==4)  ww="星期四";
+	if  (ww==5)  ww="星期五";
+	if  (ww==6)  ww="星期六";
+	colorfoot="</font>"
+	str =yy + "-" + MM + "-" + dd + " " + hh + ":" + mm + ":" + ss + "  " + ww + colorfoot;
+	return(str);
+}
+function tick()
+{
+	var today;
+	today = new Date();
+	document.getElementById("localtime").innerHTML = showLocale(today);
+	window.setTimeout("tick()", 1000);
+}
+tick();
+</script>
+</div>
+</html>
