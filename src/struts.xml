@@ -5,6 +5,7 @@
 
 <struts>
 <!--  
+wangbin
     <constant name="struts.enable.DynamicMethodInvocation" value="false" />
     -->
     <constant name="struts.devMode" value="true" />
